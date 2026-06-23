@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages - Wanderlust Travels</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #006994;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: #004d70;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #006994;
+        }
+        nav a.active {
+            background-color: #ff6b35;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .page-title {
+            text-align: center;
+            color: #006994;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .page-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .packages-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .package-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 350px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+        .package-card .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #ff6b35;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            z-index: 10;
+        }
+        .package-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .package-card .content {
+            padding: 20px;
+        }
+        .package-card h3 {
+            color: #006994;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        .package-card .duration {
+            color: #888;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+        .package-card .price {
+            color: #ff6b35;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .package-card .price span {
+            font-size: 0.6em;
+            color: #888;
+            font-weight: normal;
+        }
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        .package-card ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        .package-card ul li:before {
+            content: "✅ ";
+            color: #28a745;
+        }
+        .package-card .btn {
+            display: block;
+            background-color: #006994;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .package-card .btn:hover {
+            background-color: #004d70;
+        }
+        .table-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .table-section h2 {
+            color: #006994;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #006994;
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #004d70;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <header>
+        <h1>🌍 Wanderlust Travels</h1>
+        <p>Explore the World with Us - Your Journey Begins Here!</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tourist-places.html">Tourist Places</a>
+        <a href="travel-packages.html" class="active">Travel Packages</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">✈️ Our Travel Packages</h1>
+        <p class="page-subtitle">Curated packages for every type of traveler</p>
+
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="badge">Popular</div>
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400" alt="Bali Package">
+                <div class="content">
+                    <h3>🏝️ Bali Bliss</h3>
+                    <p class="duration">📅 7 Days / 6 Nights</p>
+                    <p class="price">$1,299 <span>per person</span></p>
+                    <ul>
+                        <li>5-star beach resort stay</li>
+                        <li>Daily breakfast included</li>
+                        <li>Ubud temple tour</li>
+                        <li>Snorkeling adventure</li>
+                        <li>Airport transfers</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">Best Value</div>
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400" alt="Europe Package">
+                <div class="content">
+                    <h3>🏰 European Explorer</h3>
+                    <p class="duration">📅 10 Days / 9 Nights</p>
+                    <p class="price">$2,499 <span>per person</span></p>
+                    <ul>
+                        <li>Paris, Rome & Barcelona</li>
+                        <li>3-star hotel accommodation</li>
+                        <li>Guided city tours</li>
+                        <li>Eurail pass included</li>
+                        <li>Breakfast & dinner</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">Luxury</div>
+                <img src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?w=400" alt="Maldives Package">
+                <div class="content">
+                    <h3>🌊 Maldives Luxury</h3>
+                    <p class="duration">📅 5 Days / 4 Nights</p>
+                    <p class="price">$3,999 <span>per person</span></p>
+                    <ul>
+                        <li>Overwater villa</li>
+                        <li>All-inclusive meals</li>
+                        <li>Spa treatment (2 sessions)</li>
+                        <li>Private sunset cruise</li>
+                        <li>Seaplane transfer</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=400" alt="Cinque Terre">
+                <div class="content">
+                    <h3>🍝 Italian Romance</h3>
+                    <p class="duration">📅 6 Days / 5 Nights</p>
+                    <p class="price">$1,899 <span>per person</span></p>
+                    <ul>
+                        <li>Venice, Florence & Rome</li>
+                        <li>Boutique hotel stays</li>
+                        <li>Wine tasting tour</li>
+                        <li>Cooking class included</li>
+                        <li>Train between cities</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400" alt="Tokyo">
+                <div class="content">
+                    <h3>🗾 Japan Discovery</h3>
+                    <p class="duration">📅 8 Days / 7 Nights</p>
+                    <p class="price">$2,799 <span>per person</span></p>
+                    <ul>
+                        <li>Tokyo, Kyoto & Osaka</li>
+                        <li>Traditional ryokan stay</li>
+                        <li>Bullet train passes</li>
+                        <li>Sushi making class</li>
+                        <li>Mount Fuji day trip</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">Adventure</div>
+                <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400" alt="Thailand">
+                <div class="content">
+                    <h3>🐘 Thailand Adventure</h3>
+                    <p class="duration">📅 9 Days / 8 Nights</p>
+                    <p class="price">$1,599 <span>per person</span></p>
+                    <ul>
+                        <li>Bangkok, Chiang Mai & Phuket</li>
+                        <li>Elephant sanctuary visit</li>
+                        <li>Island hopping tour</li>
+                        <li>Thai cooking class</li>
+                        <li>Night market food tour</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h2>📋 Package Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Duration</th>
+                        <th>Destinations</th>
+                        <th>Price (USD)</th>
+                        <th>Group Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bali Bliss</td>
+                        <td>7 Days</td>
+                        <td>Bali, Indonesia</td>
+                        <td class="highlight">$1,299</td>
+                        <td>2-10 people</td>
+                    </tr>
+                    <tr>
+                        <td>European Explorer</td>
+                        <td>10 Days</td>
+                        <td>Paris, Rome, Barcelona</td>
+                        <td class="highlight">$2,499</td>
+                        <td>4-15 people</td>
+                    </tr>
+                    <tr>
+                        <td>Maldives Luxury</td>
+                        <td>5 Days</td>
+                        <td>Maldives</td>
+                        <td class="highlight">$3,999</td>
+                        <td>2-6 people</td>
+                    </tr>
+                    <tr>
+                        <td>Italian Romance</td>
+                        <td>6 Days</td>
+                        <td>Venice, Florence, Rome</td>
+                        <td class="highlight">$1,899</td>
+                        <td>2-8 people</td>
+                    </tr>
+                    <tr>
+                        <td>Japan Discovery</td>
+                        <td>8 Days</td>
+                        <td>Tokyo, Kyoto, Osaka</td>
+                        <td class="highlight">$2,799</td>
+                        <td>4-12 people</td>
+                    </tr>
+                    <tr>
+                        <td>Thailand Adventure</td>
+                        <td>9 Days</td>
+                        <td>Bangkok, Chiang Mai, Phuket</td>
+                        <td class="highlight">$1,599</td>
+                        <td>6-20 people</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Wanderlust Travels. All Rights Reserved. | Explore. Dream. Discover.</p>
+    </footer>
+</body>
+</html>
